@@ -9,6 +9,8 @@ function Topbar() {
   const handleLogout = () =>{
     dispatch({type: "LOGOUT"});
   }
+  
+  const PF = "https://blooming-tundra-50823.herokuapp.com/images/"
     return (
         <div className="top">
         <div className="topLeft">
@@ -23,9 +25,7 @@ function Topbar() {
           <Link className="link" to="/">
               HOME
             </Link>
-          </li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">CONTACT</li>
+          </li> 
           <li className="topListItem">
           <Link className="link" to="/write">
               WRITE
@@ -33,22 +33,34 @@ function Topbar() {
           </li> 
           <li className="topListItem"
          onClick={handleLogout}>{ user && "LOGOUT"  }</li>
-          <li className="topListItem" >REGISTER</li>
+           
         </ul>
       </div>
         
 
       <div className="topRight">  
           {
-            user && 
-            <img
+            user ? 
+            <Link to="/setting" >
+              <img
               className="topImg" 
-              src={user.profilePic} 
+              src={PF + user.profilePic} 
               alt=""
-            /> 
+            />
+            </Link>
+              : (
+              <div className="topList"> 
+                <li className="topListItem" >
+                  <Link className="link" to="/login">LOGIN</Link>
+                  </li>
+                <li className="topListItem" >
+                <Link className="link"  to="/register">REGISTER</Link>
+                  </li>
+              </div> 
+            )
           }
              
-      <i className="topSearchIcon fas fa-search"></i>
+      {/* <i className="topSearchIcon fas fa-search"></i> */}
       </div> 
       </div>
     );  

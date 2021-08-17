@@ -17,7 +17,8 @@ import Write from './Pages/Write/Write';
 
 function App() {
    const {user} = useContext(Context);
-
+    
+// "proxy" : "https://blooming-tundra-50823.herokuapp.com/api/"
   return (
     <>
     <Router> 

@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() =>{
      const fetchPosts =  async () =>{
        const res = await   
-       axios.get("/posts/" + search);
+       axios.get("https://blooming-tundra-50823.herokuapp.com/api/posts/" + search);
        setPost(res.data) 
      }
      fetchPosts();   

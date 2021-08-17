@@ -1,4 +1,4 @@
- export const LoginStart = {userCredentials} = ({
+ export const LoginStart = (userCredentials) => ({
      type:"LOGIN_START"
  })
 
@@ -19,3 +19,16 @@
 
 
 
+ 
+ export const UpdateStart = (userCredentials) => ({
+    type:"UPDATE_START"
+})
+
+export const UpdateSuccess = (user) =>({
+    type:"UPDATE_SUCCESS",
+    payload: user
+})
+
+export const UpdateFailed = () =>({
+   type: "UPDATE_FAILURE"
+})

@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   useEffect(() =>{
   const getCats = async () =>{
-    const res = await axios.get("/cate");
+    const res = await axios.get("https://blooming-tundra-50823.herokuapp.com/api/cate");
     setCat(res.data)
   }
    getCats()
